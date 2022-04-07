@@ -54,7 +54,7 @@ class TemplateEngineTwig extends TemplateEngineBase
         $loader = new FilesystemLoader($this->getTemplatesRootPath());
 
         $this->twig = new Environment($loader, [
-            'cache' => $this->wire('config')->paths->assets . 'cache/' . self::COMPILE_DIR,
+            'cache' => $this->wire('config')->paths->cache . self::COMPILE_DIR,
             'debug' => $this->isDebug(),
             'auto_reload' => (bool) $this->moduleConfig['auto_reload'],
             'autoescape' => $this->moduleConfig['auto_escape'] ? 'name' : false,
